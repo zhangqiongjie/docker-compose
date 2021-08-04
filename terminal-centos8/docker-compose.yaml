@@ -1,0 +1,18 @@
+---
+version: "3"
+services:
+  centos8:
+    image: zhangqiongjie/web-terminal:0.0.2 
+    container_name: centos8
+    volumes:
+    - /home/ec2-user/environment/kevin/:/opt/
+    - /var/run/docker.sock:/var/run/docker.sock
+    command:
+    - "/bin/sh"
+    - "-c"
+    - "while true; do sleep 86400; done"
+    environment:
+      TZ: "Asia/Shagnhai"
+    restart: always
+    networks:
+    - default
